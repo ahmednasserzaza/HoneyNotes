@@ -1,4 +1,4 @@
-package com.fighter.honeynotes
+package com.fighter.honeynotes.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,10 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.fighter.honeynotes.databinding.FragmentHomeBinding
 
-private lateinit var binding: FragmentHomeBinding
-
-
 class HomeFragment : Fragment() {
+
+    private lateinit var binding:FragmentHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
