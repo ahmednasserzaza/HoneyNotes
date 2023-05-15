@@ -2,13 +2,14 @@ package com.fighter.honeynotes.ui.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.fighter.honeynotes.BR
 import com.fighter.honeynotes.data.NoteEntity
 import com.fighter.honeynotes.databinding.ItemNoteBinding
 
-class NotesAdapter(private val notes: List<NoteEntity>) :
+class NotesAdapter(private var notes: List<NoteEntity>) :
     RecyclerView.Adapter<NotesAdapter.NoteViewHolder>() {
 
     inner class NoteViewHolder(val binding: ItemNoteBinding) : ViewHolder(binding.root)
@@ -22,9 +23,15 @@ class NotesAdapter(private val notes: List<NoteEntity>) :
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         val currentItem = notes[position]
-        with(holder.binding){
-            setVariable(BR.item , currentItem)
+        with(holder.binding) {
+            setVariable(BR.item, currentItem)
         }
+    }
+
+    fun setItems(newNotes: List<NoteEntity>) {
+        val result = DiffUtil.calculateDiff(NoteDiffUtil(notes, newNotes))
+        notes = newNotes
+        result.dispatchUpdatesTo(this)
     }
 
 }
