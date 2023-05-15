@@ -1,4 +1,4 @@
-package com.fighter.honeynotes.ui
+package com.fighter.honeynotes.ui.home
 
 import androidx.lifecycle.ViewModel
 

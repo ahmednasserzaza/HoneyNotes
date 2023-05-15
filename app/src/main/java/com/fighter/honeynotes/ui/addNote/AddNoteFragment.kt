@@ -1,4 +1,4 @@
-package com.fighter.honeynotes.ui
+package com.fighter.honeynotes.ui.addNote
 
 import android.os.Bundle
 import android.view.LayoutInflater

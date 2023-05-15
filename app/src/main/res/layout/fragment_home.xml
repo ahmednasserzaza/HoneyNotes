@@ -7,13 +7,13 @@
 
         <variable
             name="viewModel"
-            type="com.fighter.honeynotes.ui.HomeViewModel" />
+            type="com.fighter.honeynotes.ui.home.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.HomeFragment">
+        tools:context=".ui.home.HomeFragment">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_add_note"
