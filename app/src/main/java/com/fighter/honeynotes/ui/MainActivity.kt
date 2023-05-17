@@ -14,5 +14,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         NoteDatabase.getInstance(applicationContext) // This is work around instance before study dependency injection
+
     }
 }
